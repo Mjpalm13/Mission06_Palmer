@@ -1,31 +1,35 @@
 @model Mission06_Palmer.Models.Movie
 
+@{
+    ViewData["Title"] = "Add a Movie";
+}
+
 <h2>Add a Movie</h2>
 
 <form asp-action="AddMovie" method="post">
     <div class="form-group">
-        <label asp-for="Title"></label>
+        <label>Title:</label>
         <input asp-for="Title" class="form-control" required />
     </div>
 
     <div class="form-group">
-        <label asp-for="Category"></label>
+        <label>Category:</label>
         <input asp-for="Category" class="form-control" required />
     </div>
 
     <div class="form-group">
-        <label asp-for="Director"></label>
+        <label>Director:</label>
         <input asp-for="Director" class="form-control" required />
     </div>
 
     <div class="form-group">
-        <label asp-for="Year"></label>
-        <input asp-for="Year" class="form-control" type="number" min="1888" max="2100" required />
+        <label>Year:</label>
+        <input asp-for="Year" class="form-control" type="number" required />
     </div>
 
     <div class="form-group">
-        <label asp-for="Rating"></label>
-        <select asp-for="Rating" class="form-control">
+        <label>Rating:</label>
+        <select asp-for="Rating" class="form-control" required>
             <option value="G">G</option>
             <option value="PG">PG</option>
             <option value="PG-13">PG-13</option>
@@ -33,23 +37,21 @@
         </select>
     </div>
 
-    <div class="form-group">
-        <label asp-for="Edited">Edited</label>
-        <select asp-for="Edited" class="form-control">
-            <option value="true">Yes</option>
-            <option value="false">No</option>
-        </select>
+    <div class="form-group form-check">
+        <input asp-for="Edited" class="form-check-input" />
+        <label class="form-check-label">Edited</label>
     </div>
 
+
     <div class="form-group">
-        <label asp-for="LentTo">Lent To</label>
+        <label>Lent To:</label>
         <input asp-for="LentTo" class="form-control" />
     </div>
 
     <div class="form-group">
-        <label asp-for="Notes"></label>
+        <label>Notes (Max 25 characters):</label>
         <input asp-for="Notes" class="form-control" maxlength="25" />
     </div>
 
-    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="submit" class="btn btn-primary">Add Movie</button>
 </form>

@@ -1,26 +1,29 @@
 using Microsoft.AspNetCore.Mvc;
 using Mission06_Palmer.Models;
-using Mission06_Palmer.Data;
 
 namespace Mission06_Palmer.Controllers
 {
-    public class MoviesController : Controller
+    public class MovieController : Controller
     {
         private readonly MovieContext _context;
 
-        public MoviesController(MovieContext context)
+        public MovieController(MovieContext context)
         {
             _context = context;
         }
 
-        // GET: Movies/AddMovie
+        public IActionResult Index()
+        {
+            var movies = _context.Movies.ToList();
+            return View(movies);
+        }
+
         [HttpGet]
         public IActionResult AddMovie()
         {
             return View();
         }
 
-        // POST: Movies/AddMovie
         [HttpPost]
         public IActionResult AddMovie(Movie movie)
         {
@@ -28,10 +31,8 @@ namespace Mission06_Palmer.Controllers
             {
                 _context.Movies.Add(movie);
                 _context.SaveChanges();
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index");
             }
-
-            // If model state is invalid, return the same view with validation errors
             return View(movie);
         }
     }
