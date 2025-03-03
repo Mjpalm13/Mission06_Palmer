@@ -3,6 +3,7 @@ using Mission06_Palmer.Models;
 
 namespace Mission06_Palmer.Controllers
 {
+    // Idk if you expect comments for this page but I feel like it is pointless here
     public class MovieController : Controller
     {
         private readonly MovieContext _context;
@@ -21,6 +22,7 @@ namespace Mission06_Palmer.Controllers
         [HttpGet]
         public IActionResult AddMovie()
         {
+            var movie = new Movie();
             return View();
         }
 

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Mission06_Palmer.Models;
 
 namespace Mission06_Palmer.Controllers
+// This is my controller page for handling HTTP requests for home and other views
 {
     public class HomeController : Controller
     {
@@ -12,7 +13,7 @@ namespace Mission06_Palmer.Controllers
         {
             _logger = logger;
         }
-
+        
         public IActionResult Index()
         {
             return View();

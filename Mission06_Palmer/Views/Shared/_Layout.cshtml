@@ -1,18 +1,20 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>@ViewData["Title"] - Mission06_Palmer</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
-    <link rel="stylesheet" href="~/Mission06_Palmer.styles.css" asp-append-version="true"/>
+    <meta charset="utf-8"/> <!-- Specifies the character encoding for the page -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Ensures the page is responsive on different screen sizes -->
+    <title>@ViewData["Title"] - Mission06_Palmer</title> <!-- Title of the page, dynamic based on the ViewData -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/> <!-- Bootstrap CSS for responsive layout and components -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/> <!-- Custom site styles -->
+    <link rel="stylesheet" href="~/Mission06_Palmer.styles.css" asp-append-version="true"/> <!-- Additional custom styles -->
 </head>
 <body>
 <header>
+    <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
         <div class="container-fluid">
             <ul class="navbar-nav">
+                <!-- Links to different pages -->
                 <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Home</a></li>
                 <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Joel">Get to Know Joel</a></li>
                 <li class="nav-item"><a class="nav-link" asp-controller="Movie" asp-action="AddMovie">Add Movie</a></li>
@@ -23,18 +25,21 @@
 </header>
 <div class="container">
     <main role="main" class="pb-3">
-        @RenderBody()
+        @RenderBody() <!-- Renders the content of the current view -->
     </main>
 </div>
 
+<!-- Footer Section -->
 <footer class="border-top footer text-muted">
     <div class="container">
-        &copy; 2025 - Mission06_Palmer - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        &copy; 2025 - Mission06_Palmer - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> <!-- Privacy link -->
     </div>
 </footer>
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="~/js/site.js" asp-append-version="true"></script>
-@await RenderSectionAsync("Scripts", required: false)
+
+<!-- JavaScript files -->
+<script src="~/lib/jquery/dist/jquery.min.js"></script> <!-- jQuery for DOM manipulation -->
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> <!-- Bootstrap JS for responsive components -->
+<script src="~/js/site.js" asp-append-version="true"></script> <!-- Custom site JavaScript -->
+@await RenderSectionAsync("Scripts", required: false) <!-- Renders additional scripts if any -->
 </body>
 </html>

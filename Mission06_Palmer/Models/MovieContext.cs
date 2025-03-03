@@ -5,10 +5,11 @@ namespace Mission06_Palmer.Models;
 
 public class MovieContext : DbContext
 {
+    // MovieContext is responsible for interacting with the database and managing the Movie entities
     public MovieContext(DbContextOptions<MovieContext> options) : base(options) { }
 
     public DbSet<Movie> Movies { get; set; }
-
+    // I found it was easier to initialize 3 movies into the database instead of typing them out
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Movie>().HasData(
